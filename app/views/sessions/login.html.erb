@@ -1,9 +1,19 @@
-<h1>Login Page</h1>
-<form action="/sessions" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p><label> Email: <input type="text" name="email"></label></p>
-    <p><label> Password: <input type="password" name="password"></label></p>
-    <input type="submit" value="Log In">
-</form>
-
-<p> New to our website? Create an account <a href="/sessions/new">here</a>. </p>
+<div class="login_wrapper">
+	<div class="login">
+		<h1>Login Page</h1>
+		<% if flash[:errors] %>
+		<div>
+			<% flash[:errors].each do |e| %>
+					<p class="blue"><%= e %></p>
+			<% end %>
+		</div>
+		<% end %>
+		<form action="/sessions" method="post">
+		    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		    <input class="session" type="text" name="email" placeholder="Email">
+		    <input class="session" type="password" name="password" placeholder="Password">
+		    <input class="log_button" type="submit" value="Log In">
+		</form>
+		<p class="create_link"> New to our website? Create an account <a href="/sessions/new">here</a>. </p>
+	</div>
+</div>

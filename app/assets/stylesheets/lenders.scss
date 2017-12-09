@@ -1,3 +1,176 @@
 // Place all the styles related to the Lenders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#lender_container{
+	margin-top: 10vh;
+	max-height: 70vh;
+	max-width: 100%;
+	height: 70vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+.welcome{
+	padding: 20px 0 0 10px;
+}
+.money_box{
+	top: 0;
+	left: 50%;
+	position: relative;
+	text-align: center;
+	width: 700px;
+	margin: 10px 0 0 -350px;
+}
+.capital{
+	display: inline-block;
+	text-align: center;
+	width: 40%;
+	height: 50px;
+	vertical-align: top;
+	background: linear-gradient(#333, #333, #333,#000000);
+	padding: 10px 10px;
+	color: #f8f8f8;
+	border: 2px outset #000000;
+}
+.blue{color: #1e8fff}
+.list_header{
+	text-decoration: underline;
+	text-decoration-color: #1e8fff;
+	text-decoration-style: double;
+	margin-left: 10px;
+}
+.table{
+	width: 95%;
+	margin: auto;
+	border-collapse: collapse;
+}
+.table td, .table th{
+	border: 1px solid #F7F7F7;
+  padding: 8px;
+}
+.table tr:nth-child(even){
+	background-color: #EDEDED;
+}
+.table tr:hover {
+	background-color: #DCDCDC;
+}
+.table th{
+	background: linear-gradient(#333, #333, #333,#000000);
+	color: #f8f8f8;
+}
+
+/*=====MODAL=====*/
+.sub_btn{
+	background: linear-gradient(#333, #333, #333,#000000);
+	color: #f8f8f8;
+	border-radius: 0;
+	border-color: #333;
+	font-size: .8em;
+}
+#myBtn{
+	cursor: pointer;
+	color: #1e8fff;
+	line-height: inherit;
+	font-size: 1.1em;
+	padding: 0 2px;
+	border: none;
+	background: inherit;
+
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+		text-align: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 10px;
+    border: 5px solid #333;
+    width: 20%;
+}
+.close{
+	float: right;
+	border-radius: 2px;
+	border: 2px outset #1e8fff;
+	background: inherit;
+	color: #aaa;
+	font-size: .7em;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+@media only screen and (max-width : 1025px){
+	.modal-content {
+		width: 40%;
+		margin: 30% auto;
+	}
+	#lender_container{
+		text-align: center;
+	}
+}
+@media only screen and (max-width : 750px) {
+	.modal_content {
+		width: 100% !important;
+		margin: auto 0;
+	}
+	#lender_container{
+		height: 90vh;
+		font-size: .8em !important;
+		padding: 0;
+		margin: 0;
+	}
+	.money_box{
+		width: 93.2%;
+		margin: 0;
+		padding: 0;
+		left: 0;
+		text-align: center;
+	}
+	.table{
+		width: 100%;
+		table-layout: fixed;
+		margin: auto;
+		font-size: .7em;
+		overflow: hidden;
+	}
+	.table td, .table th{
+		border: 1px solid #F7F7F7;
+	  padding: 0;
+	}
+	.loan{
+		width: 100%;
+	}
+	.capital{
+		width: 100% !important;
+		display: block;
+		font-size: 1.7em;
+	}
+	.list_header{
+		text-align: center;
+	}
+	// For borrower
+	#raised{
+		width: 93.2% !important;
+		overflow: hidden;
+	}
+	.needed{
+		width: 93.2%;
+		margin: 0;
+		left: 0;
+	}
+}

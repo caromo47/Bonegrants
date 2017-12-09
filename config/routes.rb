@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	#LENDERS
 	get "lenders/:lender_id" => "lenders#index"
 	post "lenders" => "lenders#create"
+	patch "lenders/:lender_id" => 'lenders#update'
 	#BORROWERS
 	get 'borrowers/:borrower_id' => "borrowers#index"
 	post "borrowers" => "borrowers#create"

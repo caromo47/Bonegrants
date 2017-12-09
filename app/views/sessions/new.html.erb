@@ -1,30 +1,38 @@
-<h1> Lender </h1>
-<form action="/lenders" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p><label> First Name: <input type="text" name="lender[first_name]"></label></p>
-    <p><label> Last Name: <input type="text" name="lender[last_name]"></label></p>
-    <p><label> Email: <input type="text" name="lender[email]"></label></p>
-    <p><label> Password: <input type="password" name="lender[password]"></label></p>
-    <p><label> Password Confirmation: <input type="password" name="lender[password_confirmation]"></label></p>
-    <p><label> Starting Capital: <input type="number" name="lender[capital]" min="100" step="100"></label></p>
-    <input type="submit" value="Register Lender">
-</form>
-
-<p>Already registered? Login <a href="/sessions/login">here</a>.</p>
-
-
-<h1> Borrower </h1>
-<form action="/borrowers" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p><label> First Name: <input type="text" name="borrower[first_name]"></label></p>
-    <p><label> Last Name: <input type="text" name="borrower[last_name]"></label></p>
-    <p><label> Email: <input type="text" name="borrower[email]"></label></p>
-    <p><label> Password: <input type="password" name="borrower[password]"></label></p>
-    <p><label> Password Confirmation: <input type="password" name="borrower[password_confirmation]"></label></p>
-    <p><label> Need Money for: <input type="text" name="borrower[loan_name]"></label></p>
-    <p><label> Description: <textarea name="borrower[loan_detail]" rows="8" cols="80"></textarea></label></p>
-    <p><label> Amount Needed: <input type="number" name="borrower[capital_needed]" min="100" step="100"></label></p>
-    <input type="submit" value="Register Borrower">
-</form>
-
-<p>Already registered? Login <a href="/sessions/login">here</a>.</p>
+<h2 class="registered">Already registered? Login <a href="/sessions/login">here</a>.</h2>
+<div id="container">
+	<% if flash[:errors] %>
+	<div class="errors_box">
+		<% flash[:errors].each do |e| %>
+				<p class="errors"><%= e %></p>
+		<% end %>
+	</div>
+	<% end %>
+	<div class="lender">
+		<h1> Lender </h1>
+		<form action="/lenders" method="post">
+		    <input class="session" type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		    <input class="session" type="text" name="lender[first_name]" placeholder="First Name">
+		    <input class="session" type="text" name="lender[last_name]" placeholder="Last Name">
+		    <input class="session" type="text" name="lender[email]" placeholder="Email">
+		    <input class="session" type="password" name="lender[password]" placeholder="Password">
+		   	<input class="session" type="password" name="lender[password_confirmation]" placeholder="Confirm Password">
+		    <input class="session" type="number" name="lender[capital]" min="100" step="100" placeholder="Starting Capital">
+		    <input class="log_button" type="submit" value="Register Lender">
+		</form>
+	</div>
+	<div class="borrower">
+		<h1>Borrower</h1>
+		<form action="/borrowers" method="post">
+		    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		    <input class="session" type="text" name="borrower[first_name]" placeholder="First Name">
+		    <input class="session" type="text" name="borrower[last_name]" placeholder="Last Name">
+		    <input class="session" type="text" name="borrower[email]" placeholder="Email">
+		    <input class="session" type="password" name="borrower[password]" placeholder="Password">
+		    <input class="session" type="password" name="borrower[password_confirmation]" placeholder="Confirm Password">
+		    <input class="session" type="text" name="borrower[loan_name]" placeholder="Need Money For...">
+		    <textarea class="session" name="borrower[loan_detail]" rows="4" placeholder="More Details..."></textarea>
+		    <input class="session" type="number" name="borrower[capital_needed]" min="100" step="100" placeholder="How Much I Need">
+		    <input class="log_button" type="submit" value="Register Borrower">
+		</form>
+	</div>
+</div>
